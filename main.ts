@@ -1,8 +1,7 @@
-let run = 0
 let count = 0
+let run = 0
 pins.servoWritePin(AnalogPin.P2, 0)
-basic.forever(function on_forever() {
-    
+basic.forever(function () {
     if (pins.analogReadPin(AnalogPin.P1) == 10) {
         run = 1
     } else if (pins.analogReadPin(AnalogPin.P1) == 80) {
@@ -10,8 +9,7 @@ basic.forever(function on_forever() {
         count = 0
         pins.servoWritePin(AnalogPin.P2, 0)
     }
-    
-    if (run == 0) {
+    if (run == 1) {
         if (count < 60) {
             pins.servoWritePin(AnalogPin.P2, 40)
             basic.pause(500)
@@ -24,7 +22,5 @@ basic.forever(function on_forever() {
         } else {
             count = 0
         }
-        
     }
-    
 })
