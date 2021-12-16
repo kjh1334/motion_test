@@ -10,7 +10,7 @@ def on_forever():
         run = 0
         count = 0
         pins.servo_write_pin(AnalogPin.P2, 0)
-    if run == 0:
+    if run == 1:
         if count < 60:
             pins.servo_write_pin(AnalogPin.P2, 40)
             basic.pause(500)
